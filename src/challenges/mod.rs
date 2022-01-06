@@ -1,3 +1,4 @@
+pub mod shared;
 mod can_carry;
 mod can_mouse_eat;
 mod can_reconfigure;
@@ -19,12 +20,12 @@ mod list_gifts;
 mod max_profit;
 mod missing_reindeer;
 mod pangram;
-pub mod shared;
 mod should_buy_fidelity;
 mod store_contains;
 mod sum_pairs;
 mod wrap_gifts;
 
+pub use self::shared::*;
 pub use self::can_carry::*;
 pub use self::can_mouse_eat::*;
 pub use self::can_reconfigure::*;
@@ -46,7 +47,6 @@ pub use self::list_gifts::*;
 pub use self::max_profit::*;
 pub use self::missing_reindeer::*;
 pub use self::pangram::*;
-pub use self::shared::*;
 pub use self::should_buy_fidelity::*;
 pub use self::store_contains::*;
 pub use self::sum_pairs::*;
