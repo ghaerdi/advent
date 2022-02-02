@@ -6,9 +6,9 @@ pub fn check_is_same_tree(tree_a: Tree, tree_b: Tree) -> bool {
             return a.value == b.value && check(a.left, b.left) && check(a.right, b.right);
         }
 
-        return true;
+        true
     }
-    return check(Some(Box::new(tree_a)), Some(Box::new(tree_b)));
+    check(Some(Box::new(tree_a)), Some(Box::new(tree_b)))
 }
 
 #[cfg(test)]

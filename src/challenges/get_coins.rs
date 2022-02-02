@@ -10,10 +10,10 @@ pub fn get_coins(mut change: u32) -> Vec<u32> {
         };
 
         change %= coin;
-        return result;
+        result
     };
 
-    return COINS.map(change_coins).iter().copied().rev().collect();
+    COINS.map(change_coins).iter().copied().rev().collect()
 }
 
 #[cfg(test)]

@@ -9,7 +9,7 @@ pub fn check_sled_jump(heights: &[u32]) -> bool {
         }
     });
 
-    return !invalid && !up;
+    !invalid && !up
 }
 
 #[cfg(test)]

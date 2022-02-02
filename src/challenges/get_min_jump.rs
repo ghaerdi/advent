@@ -1,16 +1,16 @@
 pub fn get_min_jump(obstacles: &[u8]) -> u8 {
-    let free = get_rest_of_numbers(&obstacles, *obstacles.iter().max().unwrap());
+    let free = get_rest_of_numbers(obstacles, *obstacles.iter().max().unwrap());
     for f in free {
         if obstacles.iter().all(|&o| o % f != 0) {
             return f;
         }
     }
 
-    return 1;
+    1
 }
 
 fn get_rest_of_numbers(numbers: &[u8], limit: u8) -> Vec<u8> {
-    return (1..limit).filter(|&x| !numbers.contains(&x)).collect();
+    (1..limit).filter(|&x| !numbers.contains(&x)).collect()
 }
 
 #[cfg(test)]

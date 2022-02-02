@@ -4,9 +4,9 @@ pub fn group_by<T>(items: Vec<T>, key: fn(&T) -> String) -> HashMap<String, Vec<
     let mut map = HashMap::new();
     for item in items {
         let key = key(&item);
-        map.entry(key).or_insert(vec![]).push(item);
+        map.entry(key).or_insert_with(Vec::new).push(item);
     }
-    return map;
+    map
 }
 
 #[cfg(test)]

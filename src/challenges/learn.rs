@@ -21,7 +21,7 @@ pub fn learn(time: u8, courses: &[u8]) -> Option<(usize, usize)> {
         return None;
     }
 
-    return Some(result);
+    Some(result)
 }
 
 #[cfg(test)]

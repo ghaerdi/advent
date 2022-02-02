@@ -6,11 +6,11 @@ pub fn pangram(letter: &str) -> bool {
 
     let letter = letter.to_lowercase();
     let mut splitted: Vec<char> = letter.chars().collect();
-    splitted.sort();
+    splitted.sort_unstable();
     splitted.dedup();
     splitted.retain(|c| ABC.contains(c));
 
-    return splitted.len() == ABC.len();
+    splitted.len() == ABC.len()
 }
 
 #[cfg(test)]

@@ -20,7 +20,7 @@ pub fn create_xmas_tree(height: usize) -> String {
     three.push(trunk.clone());
     three.push(trunk);
 
-    return three.join("\n");
+    three.join("\n")
 }
 
 fn fill_with_underscore(text: String, len: usize) -> String {
@@ -29,7 +29,7 @@ fn fill_with_underscore(text: String, len: usize) -> String {
         underscores.push('_');
     }
 
-    return underscores.clone() + &text + &underscores;
+    underscores.clone() + &text + &underscores
 }
 
 #[cfg(test)]

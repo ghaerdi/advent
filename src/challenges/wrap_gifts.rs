@@ -7,11 +7,11 @@ pub fn wrap_gifts(gifts: &[&str]) -> Vec<String> {
 
             let mut result = vec![border_x.clone()];
             gifts.iter().for_each(|&g| {
-                result.push(format!("*{}*", g.to_string()));
+                result.push(format!("*{}*", g));
             });
             result.push(border_x);
 
-            return result;
+            result
         }
     }
 }

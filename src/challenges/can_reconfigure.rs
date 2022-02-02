@@ -10,8 +10,8 @@ pub fn can_reconfigure(from: &str, to: &str) -> bool {
     {
         let mut sorted_f: Vec<char> = from.clone();
         let mut sorted_t: Vec<char> = to.clone();
-        sorted_f.sort();
-        sorted_t.sort();
+        sorted_f.sort_unstable();
+        sorted_t.sort_unstable();
         sorted_f.dedup();
         sorted_t.dedup();
 
@@ -33,7 +33,7 @@ pub fn can_reconfigure(from: &str, to: &str) -> bool {
         }
     }
 
-    return true;
+    true
 }
 
 #[cfg(test)]

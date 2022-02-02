@@ -1,7 +1,7 @@
 const MOUSE: &str = "m";
 const FOOD: &str = "*";
 
-pub fn can_mouse_eat(direction: &str, room: &Vec<Vec<&str>>) -> bool {
+pub fn can_mouse_eat(direction: &str, room: &[Vec<&str>]) -> bool {
     let mut mouse_position = None;
     room.iter().enumerate().for_each(|(y, arr)| {
         arr.iter().enumerate().for_each(|(x, &el)| {
@@ -41,7 +41,7 @@ pub fn can_mouse_eat(direction: &str, room: &Vec<Vec<&str>>) -> bool {
         };
     };
 
-    return false;
+    false
 }
 
 #[cfg(test)]
@@ -50,7 +50,7 @@ mod test {
 
     #[test]
     fn can_mouse_eat_test_1() {
-        let room = vec![
+        let room = [
             vec![" ", " ", " "],
             vec![" ", " ", MOUSE],
             vec![" ", " ", FOOD],
@@ -64,7 +64,7 @@ mod test {
 
     #[test]
     fn can_mouse_eat_test_2() {
-        let room = vec![
+        let room = [
             vec![FOOD, " ", " ", " "],
             vec![" ", MOUSE, FOOD, " "],
             vec![" ", " ", " ", " "],

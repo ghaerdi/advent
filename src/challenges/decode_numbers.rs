@@ -10,7 +10,7 @@ pub fn decode_numbers(symbols: &str) -> Option<u32> {
     };
 
     symbols.iter().enumerate().for_each(|(i, symbol)| {
-        let n = meaning.get(&symbol).unwrap_or(&0);
+        let n = meaning.get(symbol).unwrap_or(&0);
 
         if i + 1 != symbols.len() && n < meaning.get(&symbols[i + 1]).unwrap_or(&0) {
             result -= n;
@@ -19,7 +19,7 @@ pub fn decode_numbers(symbols: &str) -> Option<u32> {
         }
     });
 
-    return Some(result as u32);
+    Some(result as u32)
 }
 
 fn symbols_meaning() -> HashMap<char, i32> {
@@ -31,7 +31,7 @@ fn symbols_meaning() -> HashMap<char, i32> {
         meaning.insert(v, NUMBERS[i]);
     });
 
-    return meaning;
+    meaning
 }
 
 #[cfg(test)]

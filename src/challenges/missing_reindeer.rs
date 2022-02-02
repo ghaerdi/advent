@@ -1,6 +1,6 @@
 pub fn missing_reindeer(mut ids: Vec<u8>) -> u8 {
-    ids.sort();
-    return match ids[0] {
+    ids.sort_unstable();
+    match ids[0] {
         1 => 0,
         _ => {
             ids.iter()
@@ -10,7 +10,7 @@ pub fn missing_reindeer(mut ids: Vec<u8>) -> u8 {
                 .1
                 + 1
         }
-    };
+    }
 }
 
 #[cfg(test)]

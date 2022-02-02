@@ -3,7 +3,7 @@ use std::collections::HashMap;
 pub fn list_gifts(letter: &str) -> HashMap<String, u8> {
     let not_underscored = |item: &&str| !item.contains('_');
 
-    return count(letter.split(' ').filter(not_underscored).collect());
+    count(letter.split(' ').filter(not_underscored).collect())
 }
 
 fn count(letter: Vec<&str>) -> HashMap<String, u8> {
@@ -17,7 +17,7 @@ fn count(letter: Vec<&str>) -> HashMap<String, u8> {
         }
     }
 
-    return result;
+    result
 }
 
 #[cfg(test)]

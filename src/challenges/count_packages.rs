@@ -11,13 +11,13 @@ pub fn count_packages(carriers: &[Carrier], carrier_id: &str) -> u32 {
             if *id == carrier_id {
                 total += total_packages;
 
-                if carriers_id.len() > 0 {
+                if !carriers_id.is_empty() {
                     total += carriers_id.iter().map(count_subpackages).sum::<u32>();
                 }
             }
         });
 
-    return total;
+    total
 }
 
 #[cfg(test)]

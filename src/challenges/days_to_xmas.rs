@@ -4,7 +4,7 @@ use chrono::prelude::*;
 
 pub fn days_to_xmas(date: Date<Utc>) -> i64 {
     let xmas = Utc.ymd(2021, 12, 25);
-    return (xmas - date).num_days();
+    (xmas - date).num_days()
 }
 
 #[cfg(test)]

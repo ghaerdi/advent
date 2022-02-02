@@ -19,12 +19,9 @@ pub fn can_carry(capacity: u32, trip: &[(u32, u32, u32)]) -> bool {
     let mut trip_map = BTreeMap::new();
 
     trip.iter().for_each(|item| {
-        if !trip_map.contains_key(&item.1) {
-            trip_map.insert(item.1, Trip::new());
-        }
-        if !trip_map.contains_key(&item.2) {
-            trip_map.insert(item.2, Trip::new());
-        }
+        trip_map.entry(item.1).or_insert_with(Trip::new);
+        trip_map.entry(item.2).or_insert_with(Trip::new);
+
         trip_map.get_mut(&item.1).unwrap().get = Some(item.0);
         trip_map.get_mut(&item.2).unwrap().delivery = Some(item.0);
     });
@@ -43,7 +40,7 @@ pub fn can_carry(capacity: u32, trip: &[(u32, u32, u32)]) -> bool {
         }
     }
 
-    return true;
+    true
 }
 
 #[cfg(test)]

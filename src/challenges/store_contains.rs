@@ -14,7 +14,7 @@ pub fn store_contains(store: Store, item: &str) -> bool {
                     return true;
                 }
             }
-            return false;
+            false
         }
         Store::Item(i) => i == item,
     }
@@ -52,7 +52,7 @@ mod test {
 
         store.insert("shelve2".to_owned(), Box::new(Map(shelve)));
 
-        return Map(store);
+        Map(store)
     }
 
     #[test]

@@ -3,7 +3,7 @@ use std::collections::HashMap;
 pub fn fix_files(files: Vec<&str>) -> Vec<String> {
     let mut counter = HashMap::new();
 
-    return files
+    files
         .iter()
         .map(|&f| {
             if let Some(n) = counter.get_mut(f) {
@@ -12,9 +12,9 @@ pub fn fix_files(files: Vec<&str>) -> Vec<String> {
             }
 
             counter.insert(f, 0);
-            return f.to_string();
+            f.to_string()
         })
-        .collect();
+        .collect()
 }
 
 #[cfg(test)]

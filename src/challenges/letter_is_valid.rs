@@ -2,9 +2,9 @@ pub fn letter_is_valid(letter: &str) -> bool {
     const INVALID_BRACKETS: [&str; 5] = ["[", "]", "{", "}", "()"];
     let has_not_invalid_brackets = |b: &&str| !letter.contains(b);
 
-    return INVALID_BRACKETS.iter().all(has_not_invalid_brackets)
+    INVALID_BRACKETS.iter().all(has_not_invalid_brackets)
         && letter.find('(') < letter.find(')')
-        && letter.matches('(').count() == letter.matches(')').count();
+        && letter.matches('(').count() == letter.matches(')').count()
 }
 
 #[cfg(test)]

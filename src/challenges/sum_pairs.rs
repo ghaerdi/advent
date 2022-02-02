@@ -6,7 +6,7 @@ pub fn sum_pairs(numbers: &[isize], result: isize) -> Option<(isize, isize)> {
             }
         }
     }
-    return None;
+    None
 }
 
 #[cfg(test)]

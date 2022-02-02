@@ -5,10 +5,10 @@ pub fn count_decorations(tree: Tree) -> u32 {
         if let Some(t) = t {
             return t.value + counter(t.left) + counter(t.right);
         }
-        return 0;
+        0
     }
 
-    return counter(Some(Box::new(tree)));
+    counter(Some(Box::new(tree)))
 }
 
 #[cfg(test)]
