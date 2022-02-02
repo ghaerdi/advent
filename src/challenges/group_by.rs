@@ -19,8 +19,11 @@ mod test {
     }
 
     impl Book {
-        fn new(title: String, rating: u8) -> Self {
-            Self { title, rating }
+        fn new(title: &str, rating: u8) -> Self {
+            Self {
+                title: title.to_string(),
+                rating,
+            }
         }
     }
 
@@ -48,10 +51,10 @@ mod test {
     #[test]
     fn group_books_by_rating_test() {
         let books = vec![
-            Book::new("Functional Programming with Javascript".to_string(), 9),
-            Book::new("Clean Architecture".to_string(), 8),
-            Book::new("Refactorig to Rust".to_string(), 9),
-            Book::new("Clean Coder".to_string(), 7),
+            Book::new("Functional Programming with Javascript", 9),
+            Book::new("Clean Architecture", 8),
+            Book::new("Refactorig to Rust", 9),
+            Book::new("Clean Coder", 7),
         ];
 
         let rating = |x: &Book| x.rating.to_string();
